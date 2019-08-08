@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "test": "{{testCommand}}",
+    "testn": "clear && npm run test | bats-notify",
+    "testw": "npm run test && fswatch -0 -o -r . | xargs -0 -n1 npm run test",
+    "testnw": "npm run testn && fswatch -0 -o -r . | xargs -0 -n1 npm run testn"
+  },
+  "devDependencies": {
+    "bats-notify": "1.0.0"
+  }
+}
